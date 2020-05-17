@@ -1,0 +1,16 @@
+The system should have 5.0+ version of rails installed on your system and the latest version of postgresql database.
+
+First of all, start the postgresql database
+
+Run the following commands to run the project
+
+1.    bundle install
+2.   rake db:create
+3.   rake db:migrate
+4.   rake db:test:prepare
+5.   rake db:seed
+6.   rails server
+
+Open any browser with updated to the latest version and type : 	localhost:3000
+
+	This will run the project on your system
