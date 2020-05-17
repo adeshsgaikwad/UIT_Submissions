@@ -1,0 +1,1146 @@
+  [1m[35m (24.7ms)[0m  [1m[35mCREATE DATABASE "survey_rails_development" ENCODING = 'unicode'[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE DATABASE "survey_rails_test" ENCODING = 'unicode'[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2665316045097985545)[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (16.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[36mActiveRecord::InternalMetadata Load (497.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2665316045097985545)[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (810.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "survey_rails_test"[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (16033.7ms)[0m  [1m[35mCREATE DATABASE "survey_rails_test" ENCODING = 'unicode'[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35mSQL (3.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (415.4ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "survey_id" integer, "text" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "answer1" character varying, "answer2" character varying, "answer3" character varying, "answer4" character varying)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "surveys" CASCADE[0m
+  ↳ db/schema.rb:29
+  [1m[35m (162.9ms)[0m  [1m[35mCREATE TABLE "surveys" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:29
+  [1m[35m (7.7ms)[0m  [1m[35mALTER TABLE "questions" ADD CONSTRAINT "fk_rails_15f8f0ec98"
+FOREIGN KEY ("survey_id")
+  REFERENCES "surveys" ("id")
+[0m
+  ↳ db/schema.rb:35
+  [1m[35m (107.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200114222746)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200114180939),
+(20200114181417),
+(20200114181906);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (114.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-16 17:55:28.959258"], ["updated_at", "2020-05-16 17:55:28.959258"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[36mActiveRecord::InternalMetadata Update (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-05-16 17:55:28.972976"], ["key", "environment"]]
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/bin/rake:19
+Started GET "/" for ::1 at 2020-05-16 23:26:10 +0530
+Started GET "/" for ::1 at 2020-05-16 23:26:10 +0530
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by SurveysController#index as HTML
+Processing by SurveysController#index as HTML
+  Rendering surveys/index.html.erb within layouts/application
+  Rendering surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (24.5ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/surveys/index.html.erb:3
+  [1m[36mSurvey Exists (26.6ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/surveys/index.html.erb:3
+  [1m[36mSurvey Load (1.8ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/surveys/index.html.erb:5
+  [1m[36mSurvey Load (4.2ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/surveys/index.html.erb:5
+  Rendered surveys/index.html.erb within layouts/application (112.5ms)
+  Rendered surveys/index.html.erb within layouts/application (66.8ms)
+Completed 500 Internal Server Error in 1264ms (ActiveRecord: 45.2ms)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (F:/Week-11-Ruby-Rails-Survey/tmp/cache/assets/sprockets/v3.0/EY/EYLsU7QU3J4gmDxl7DSzBfhsH1IAp4tTqj7nz-BJT3c.cache.73059860.15348.233496, F:/Week-11-Ruby-Rails-Survey/tmp/cache/assets/sprockets/v3.0/EY/EYLsU7QU3J4gmDxl7DSzBfhsH1IAp4tTqj7nz-BJT3c.cache)):
+     5:   <%= csrf_meta_tags %>
+     6:   <%= csp_meta_tag %>
+     7: 
+     8:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10: </head>
+    11: 
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__570140531_71692220'
+app/controllers/surveys_controller.rb:6:in `index'
+Completed 200 OK in 3574ms (Views: 3435.9ms | ActiveRecord: 38.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-16 23:26:37 +0530
+Processing by SurveysController#index as HTML
+  Rendering surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/surveys/index.html.erb:3
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/surveys/index.html.erb:5
+  Rendered surveys/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 72ms (Views: 69.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/surveys/1" for ::1 at 2020-05-16 23:26:47 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (4.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/surveys_controller.rb:35
+  Rendering surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (131.8ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 1], ["LIMIT", 1]]
+  ↳ app/views/surveys/show.html.erb:3
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 1]]
+  ↳ app/views/surveys/show.html.erb:5
+  Rendered surveys/show.html.erb within layouts/application (516.7ms)
+Completed 200 OK in 991ms (Views: 611.1ms | ActiveRecord: 183.7ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:26:51 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  [1m[36mSurvey Load (0.7ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/admin/surveys/index.html.erb:7
+  Rendered admin/surveys/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 79ms (Views: 76.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/surveys/1" for ::1 at 2020-05-16 23:26:54 +0530
+Processing by Admin::SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (0.6ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:35
+  Rendering admin/surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/surveys/show.html.erb:3
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 1]]
+  ↳ app/views/admin/surveys/show.html.erb:5
+  Rendered admin/surveys/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 113ms (Views: 106.8ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/admin/surveys/1" for ::1 at 2020-05-16 23:26:58 +0530
+Processing by Admin::SurveysController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KywaSeuvl0p6l8VCzIZbbuZfXIP0YhM+vuAXPUwEUEvg5nGGAtrNUy0SdtM49YLUbiPihJ56/kAX0Wr0zkZ7Tg==", "id"=>"1"}
+  [1m[36mSurvey Load (1.5ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:53
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[36mQuestion Destroy (1.0ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[36mSurvey Destroy (1.5ms)[0m  [1m[31mDELETE FROM "surveys" WHERE "surveys"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[35m (46.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/surveys_controller.rb:54
+Redirected to http://localhost:3000/surveys
+Completed 302 Found in 85ms (ActiveRecord: 51.7ms)
+
+
+Started GET "/surveys" for ::1 at 2020-05-16 23:26:58 +0530
+Processing by SurveysController#index as HTML
+  Rendering surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/surveys/index.html.erb:3
+  Rendered surveys/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 92ms (Views: 88.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:27:02 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  Rendered admin/surveys/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 48ms (Views: 45.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:27:22 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  Rendered admin/surveys/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 64ms (Views: 62.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/surveys/new" for ::1 at 2020-05-16 23:27:25 +0530
+Processing by Admin::SurveysController#new as HTML
+  Rendering admin/surveys/new.html.erb within layouts/application
+  Rendered admin/surveys/new.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_admin_survey_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "F:/Week-11-Ruby-Rails-Survey/app/views"
+):
+    1: 
+    2: <h1>New survey</h1>
+    3: 
+    4: <%= render "layouts/admin_survey_form" %>
+  
+app/views/admin/surveys/new.html.erb:4:in `_app_views_admin_surveys_new_html_erb__343817243_133582320'
+app/controllers/admin/surveys_controller.rb:12:in `new'
+Started GET "/admin/surveys/new" for ::1 at 2020-05-16 23:27:29 +0530
+Processing by Admin::SurveysController#new as HTML
+  Rendering admin/surveys/new.html.erb within layouts/application
+  Rendered admin/surveys/new.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_admin_survey_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "F:/Week-11-Ruby-Rails-Survey/app/views"
+):
+    1: 
+    2: <h1>New survey</h1>
+    3: 
+    4: <%= render "layouts/admin_survey_form" %>
+  
+app/views/admin/surveys/new.html.erb:4:in `_app_views_admin_surveys_new_html_erb__343817243_144192900'
+app/controllers/admin/surveys_controller.rb:12:in `new'
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:27:33 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  Rendered admin/surveys/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 79ms (Views: 76.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/surveys/new" for ::1 at 2020-05-16 23:27:36 +0530
+Processing by Admin::SurveysController#new as HTML
+  Rendering admin/surveys/new.html.erb within layouts/application
+  Rendered admin/surveys/new.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_admin_survey_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "F:/Week-11-Ruby-Rails-Survey/app/views"
+):
+    1: 
+    2: <h1>New survey</h1>
+    3: 
+    4: <%= render "layouts/admin_survey_form" %>
+  
+app/views/admin/surveys/new.html.erb:4:in `_app_views_admin_surveys_new_html_erb__343817243_117851140'
+app/controllers/admin/surveys_controller.rb:12:in `new'
+Started GET "/admin/surveys/new" for ::1 at 2020-05-16 23:28:07 +0530
+Processing by Admin::SurveysController#new as HTML
+  Rendering admin/surveys/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.5ms)
+  Rendered layouts/_survey_form.html.erb (634.6ms)
+  Rendered admin/surveys/new.html.erb within layouts/application (652.4ms)
+Completed 200 OK in 712ms (Views: 710.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:28:44 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  Rendered admin/surveys/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 95ms (Views: 92.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/surveys/new" for ::1 at 2020-05-16 23:28:47 +0530
+Processing by Admin::SurveysController#new as HTML
+  Rendering admin/surveys/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.5ms)
+  Rendered layouts/_survey_form.html.erb (5.4ms)
+  Rendered admin/surveys/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 83ms (Views: 81.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:29:26 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  Rendered admin/surveys/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 106ms (Views: 104.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:29:31 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  Rendered admin/surveys/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/admin/surveys/new" for ::1 at 2020-05-16 23:29:33 +0530
+Processing by Admin::SurveysController#new as HTML
+  Rendering admin/surveys/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.3ms)
+  Rendered layouts/_survey_form.html.erb (3.6ms)
+  Rendered admin/surveys/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 52ms (Views: 51.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/surveys/new" for ::1 at 2020-05-16 23:31:30 +0530
+Processing by Admin::SurveysController#new as HTML
+  Rendering admin/surveys/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.4ms)
+  Rendered layouts/_survey_form.html.erb (5.7ms)
+  Rendered admin/surveys/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 55ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/surveys" for ::1 at 2020-05-16 23:33:00 +0530
+Processing by SurveysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0C3JwOEG4dSU9Rd83+XWHAmHTpyGHr6Am26K1tTAjdIb56IPCHO7zcNwpO0rlg+mgfvwm+wGU/4yX/cfVoKm1w==", "survey"=>{"name"=>"Pet Feedback"}, "commit"=>"Create Survey"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/surveys_controller.rb:18
+  [1m[36mSurvey Create (0.8ms)[0m  [1m[32mINSERT INTO "surveys" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pet Feedback"], ["created_at", "2020-05-16 18:03:00.567635"], ["updated_at", "2020-05-16 18:03:00.567635"]]
+  ↳ app/controllers/surveys_controller.rb:18
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/surveys_controller.rb:18
+Redirected to http://localhost:3000/surveys
+Completed 302 Found in 21ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/surveys" for ::1 at 2020-05-16 23:33:00 +0530
+Processing by SurveysController#index as HTML
+  Rendering surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/surveys/index.html.erb:3
+  [1m[36mSurvey Load (0.7ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/surveys/index.html.erb:5
+  Rendered surveys/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/surveys" for ::1 at 2020-05-16 23:37:05 +0530
+Processing by SurveysController#index as HTML
+  Rendering surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/surveys/index.html.erb:3
+  [1m[36mSurvey Load (0.9ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/surveys/index.html.erb:5
+  Rendered surveys/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 79ms (Views: 65.3ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/surveys/2" for ::1 at 2020-05-16 23:37:10 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/surveys_controller.rb:35
+  Rendering surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 2], ["LIMIT", 1]]
+  ↳ app/views/surveys/show.html.erb:3
+  Rendered surveys/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 61ms (Views: 44.0ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:37:14 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  [1m[36mSurvey Load (0.8ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/admin/surveys/index.html.erb:7
+  Rendered admin/surveys/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/surveys/2" for ::1 at 2020-05-16 23:37:18 +0530
+Processing by Admin::SurveysController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:35
+  Rendering admin/surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/surveys/show.html.erb:3
+  Rendered admin/surveys/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 271ms (Views: 263.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/surveys/2/questions/new" for ::1 at 2020-05-16 23:37:21 +0530
+Processing by Admin::QuestionsController#new as HTML
+  Parameters: {"survey_id"=>"2"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/questions_controller.rb:11
+  Rendering admin/questions/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.7ms)
+  Rendered layouts/_question_form.html.erb (71.0ms)
+  Rendered admin/questions/new.html.erb within layouts/application (75.4ms)
+Completed 200 OK in 145ms (Views: 118.2ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/surveys/2/questions" for ::1 at 2020-05-16 23:37:47 +0530
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jVPT+JwAXeDBUYuvkDIL5nRoDNwDCiIAKpWhK5h2TgO6LBBsYAPG0M0qOsp8Yb97E6LR149Tjkw7Zgu3ciCLhg==", "question"=>{"text"=>"What is your pet?", "answer1"=>"Dog", "answer2"=>"Cat", "answer3"=>"Bird", "answer4"=>"None"}, "commit"=>"Create Question", "survey_id"=>"2"}
+  [1m[36mSurvey Load (0.7ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:20
+  [1m[36mQuestion Create (1.0ms)[0m  [1m[32mINSERT INTO "questions" ("survey_id", "text", "created_at", "updated_at", "answer1", "answer2", "answer3", "answer4") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["survey_id", 2], ["text", "What is your pet?"], ["created_at", "2020-05-16 18:07:47.409572"], ["updated_at", "2020-05-16 18:07:47.409572"], ["answer1", "Dog"], ["answer2", "Cat"], ["answer3", "Bird"], ["answer4", "None"]]
+  ↳ app/controllers/questions_controller.rb:20
+  [1m[35m (46.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/questions_controller.rb:20
+Redirected to http://localhost:3000/surveys/2
+Completed 302 Found in 68ms (ActiveRecord: 48.2ms)
+
+
+Started GET "/surveys/2" for ::1 at 2020-05-16 23:37:47 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/surveys_controller.rb:35
+  Rendering surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 2], ["LIMIT", 1]]
+  ↳ app/views/surveys/show.html.erb:3
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 2]]
+  ↳ app/views/surveys/show.html.erb:5
+  Rendered surveys/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 77ms (Views: 69.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/surveys/2/questions/2" for ::1 at 2020-05-16 23:37:52 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"survey_id"=>"2", "id"=>"2"}
+  [1m[36mSurvey Load (0.6ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:37
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:38
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 2]]
+  ↳ app/views/questions/show.html.erb:11
+  Rendered questions/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 88ms (Views: 74.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:37:58 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/admin/surveys/index.html.erb:7
+  Rendered admin/surveys/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 54ms (Views: 51.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/surveys/2" for ::1 at 2020-05-16 23:38:00 +0530
+Processing by Admin::SurveysController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:35
+  Rendering admin/surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/surveys/show.html.erb:3
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 2]]
+  ↳ app/views/admin/surveys/show.html.erb:5
+  Rendered admin/surveys/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 56ms (Views: 49.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/surveys/2/questions/new" for ::1 at 2020-05-16 23:38:02 +0530
+Processing by Admin::QuestionsController#new as HTML
+  Parameters: {"survey_id"=>"2"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/questions_controller.rb:11
+  Rendering admin/questions/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.5ms)
+  Rendered layouts/_question_form.html.erb (6.0ms)
+  Rendered admin/questions/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 51ms (Views: 47.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/surveys/2/questions/new" for ::1 at 2020-05-16 23:38:08 +0530
+Processing by Admin::QuestionsController#new as HTML
+  Parameters: {"survey_id"=>"2"}
+  [1m[36mSurvey Load (0.7ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/questions_controller.rb:11
+  Rendering admin/questions/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.5ms)
+  Rendered layouts/_question_form.html.erb (7.8ms)
+  Rendered admin/questions/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 94ms (Views: 84.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/surveys/2/questions" for ::1 at 2020-05-16 23:38:28 +0530
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n5eu9xVMj93dX6O/0Wj66QqDZr2FDmSAjPt5IxXm6Keo6G1j6U8U7dEkEto9O050bUm7tglXyMydCNO//7AtIg==", "question"=>{"text"=>"What is its fur colour", "answer1"=>"", "answer2"=>"", "answer3"=>"", "answer4"=>""}, "commit"=>"Create Question", "survey_id"=>"2"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:20
+  [1m[36mQuestion Create (0.6ms)[0m  [1m[32mINSERT INTO "questions" ("survey_id", "text", "created_at", "updated_at", "answer1", "answer2", "answer3", "answer4") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["survey_id", 2], ["text", "What is its fur colour"], ["created_at", "2020-05-16 18:08:28.219394"], ["updated_at", "2020-05-16 18:08:28.219394"], ["answer1", ""], ["answer2", ""], ["answer3", ""], ["answer4", ""]]
+  ↳ app/controllers/questions_controller.rb:20
+  [1m[35m (37.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/questions_controller.rb:20
+Redirected to http://localhost:3000/surveys/2
+Completed 302 Found in 61ms (ActiveRecord: 38.5ms)
+
+
+Started GET "/surveys/2" for ::1 at 2020-05-16 23:38:28 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/surveys_controller.rb:35
+  Rendering surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 2], ["LIMIT", 1]]
+  ↳ app/views/surveys/show.html.erb:3
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 2]]
+  ↳ app/views/surveys/show.html.erb:5
+  Rendered surveys/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 61ms (Views: 55.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/surveys/2/questions/3" for ::1 at 2020-05-16 23:38:31 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"survey_id"=>"2", "id"=>"3"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:37
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:38
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 2]]
+  ↳ app/views/questions/show.html.erb:11
+  Rendered questions/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 53ms (Views: 43.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/surveys/2/questions/3/edit" for ::1 at 2020-05-16 23:38:33 +0530
+Processing by QuestionsController#edit as HTML
+  Parameters: {"survey_id"=>"2", "id"=>"3"}
+  [1m[36mSurvey Load (1.7ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:30
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:31
+  Rendering questions/edit.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.7ms)
+  Rendered layouts/_question_form.html.erb (6.1ms)
+  Rendered questions/edit.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 83ms (Views: 70.1ms | ActiveRecord: 2.2ms)
+
+
+Started PATCH "/surveys/2/questions/3" for ::1 at 2020-05-16 23:38:53 +0530
+Processing by QuestionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5ZgAVnBbLTnsA8wpJKZQp/36My6by+ZkwyGQKiS1sJELxdjiYNvnTaQ0Rg47/Knzj9vczNmBC23nlQqbZOCImg==", "question"=>{"text"=>"What is its fur colour", "answer1"=>"black", "answer2"=>"white", "answer3"=>"golden", "answer4"=>"brown"}, "commit"=>"Update Question", "survey_id"=>"2", "id"=>"3"}
+  [1m[36mSurvey Load (0.8ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:45
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."survey_id" = $1 AND "questions"."id" = $2 LIMIT $3[0m  [["survey_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:46
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:47
+  [1m[36mQuestion Update (0.7ms)[0m  [1m[33mUPDATE "questions" SET "answer1" = $1, "answer2" = $2, "answer3" = $3, "answer4" = $4, "updated_at" = $5 WHERE "questions"."id" = $6[0m  [["answer1", "black"], ["answer2", "white"], ["answer3", "golden"], ["answer4", "brown"], ["updated_at", "2020-05-16 18:08:53.978158"], ["id", 3]]
+  ↳ app/controllers/questions_controller.rb:47
+  [1m[35m (35.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/questions_controller.rb:47
+Redirected to http://localhost:3000/surveys/2/questions/3
+Completed 302 Found in 65ms (ActiveRecord: 39.7ms)
+
+
+Started GET "/surveys/2/questions/3" for ::1 at 2020-05-16 23:38:54 +0530
+Processing by QuestionsController#show as HTML
+  Parameters: {"survey_id"=>"2", "id"=>"3"}
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:37
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:38
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 2]]
+  ↳ app/views/questions/show.html.erb:11
+  Rendered questions/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 70ms (Views: 60.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/surveys" for ::1 at 2020-05-16 23:38:59 +0530
+Processing by SurveysController#index as HTML
+  Rendering surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/surveys/index.html.erb:3
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/surveys/index.html.erb:5
+  Rendered surveys/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 56ms (Views: 53.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/surveys/2" for ::1 at 2020-05-16 23:39:01 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/surveys_controller.rb:35
+  Rendering surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 2], ["LIMIT", 1]]
+  ↳ app/views/surveys/show.html.erb:3
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 2]]
+  ↳ app/views/surveys/show.html.erb:5
+  Rendered surveys/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 56ms (Views: 51.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:39:08 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/admin/surveys/index.html.erb:7
+  Rendered admin/surveys/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 63ms (Views: 60.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/surveys/2" for ::1 at 2020-05-16 23:39:10 +0530
+Processing by Admin::SurveysController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:35
+  Rendering admin/surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/surveys/show.html.erb:3
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 2]]
+  ↳ app/views/admin/surveys/show.html.erb:5
+  Rendered admin/surveys/show.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 58ms (Views: 49.5ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/admin/surveys/2" for ::1 at 2020-05-16 23:39:18 +0530
+Processing by Admin::SurveysController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IjK26zLDC3vEuf3zO9wkwJ5TcWmK6ZBawX02bPwpizTp+N0k27ZRYpM8TmLPr/16Fi/PbuDxfSRoTEulfmugMQ==", "id"=>"2"}
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:53
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 2]]
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[36mQuestion Destroy (0.6ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[36mQuestion Destroy (0.5ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[36mSurvey Destroy (0.9ms)[0m  [1m[31mDELETE FROM "surveys" WHERE "surveys"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[35m (24.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/surveys_controller.rb:54
+Redirected to http://localhost:3000/surveys
+Completed 302 Found in 63ms (ActiveRecord: 27.9ms)
+
+
+Started GET "/surveys" for ::1 at 2020-05-16 23:39:18 +0530
+Processing by SurveysController#index as HTML
+  Rendering surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/surveys/index.html.erb:3
+  Rendered surveys/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 49ms (Views: 48.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:39:21 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  Rendered admin/surveys/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 49ms (Views: 46.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/surveys/new" for ::1 at 2020-05-16 23:39:24 +0530
+Processing by Admin::SurveysController#new as HTML
+  Rendering admin/surveys/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (1.4ms)
+  Rendered layouts/_survey_form.html.erb (8.7ms)
+  Rendered admin/surveys/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 69ms (Views: 68.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/surveys" for ::1 at 2020-05-16 23:39:30 +0530
+Processing by SurveysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b05LKH0IG3tM1MjvBTtYpk6psVH0wWXeq2h3LT8ET/YB4n0gw5dRl5Wr9SpZRnh2mm8zbm3TaznUajleuJctpQ==", "survey"=>{"name"=>"Pet Survey"}, "commit"=>"Create Survey"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/surveys_controller.rb:18
+  [1m[36mSurvey Create (0.5ms)[0m  [1m[32mINSERT INTO "surveys" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pet Survey"], ["created_at", "2020-05-16 18:09:30.239980"], ["updated_at", "2020-05-16 18:09:30.239980"]]
+  ↳ app/controllers/surveys_controller.rb:18
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/surveys_controller.rb:18
+Redirected to http://localhost:3000/surveys
+Completed 302 Found in 17ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/surveys" for ::1 at 2020-05-16 23:39:30 +0530
+Processing by SurveysController#index as HTML
+  Rendering surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/surveys/index.html.erb:3
+  [1m[36mSurvey Load (0.8ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/surveys/index.html.erb:5
+  Rendered surveys/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 53ms (Views: 51.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/surveys/3" for ::1 at 2020-05-16 23:39:32 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/surveys_controller.rb:35
+  Rendering surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 3], ["LIMIT", 1]]
+  ↳ app/views/surveys/show.html.erb:3
+  Rendered surveys/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 72ms (Views: 64.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:39:34 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  [1m[36mSurvey Load (0.7ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/admin/surveys/index.html.erb:7
+  Rendered admin/surveys/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/surveys/3" for ::1 at 2020-05-16 23:39:36 +0530
+Processing by Admin::SurveysController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:35
+  Rendering admin/surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/surveys/show.html.erb:3
+  Rendered admin/surveys/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 50ms (Views: 45.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/surveys/3/questions/new" for ::1 at 2020-05-16 23:39:37 +0530
+Processing by Admin::QuestionsController#new as HTML
+  Parameters: {"survey_id"=>"3"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/questions_controller.rb:11
+  Rendering admin/questions/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.5ms)
+  Rendered layouts/_question_form.html.erb (5.7ms)
+  Rendered admin/questions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 52ms (Views: 47.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/surveys/3/questions" for ::1 at 2020-05-16 23:39:53 +0530
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zq68zLxzcz0Rzmu52BKfV5SBT2TLBDN+em9k7rZe/e60ctM3zaTdKJ1ttqNR7h0grciLdT+d2/YWhTHg3r6zng==", "question"=>{"text"=>"What is your pet?", "answer1"=>"Dog ", "answer2"=>"Cat", "answer3"=>"Bird", "answer4"=>"None"}, "commit"=>"Create Question", "survey_id"=>"3"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:20
+  [1m[36mQuestion Create (1.0ms)[0m  [1m[32mINSERT INTO "questions" ("survey_id", "text", "created_at", "updated_at", "answer1", "answer2", "answer3", "answer4") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["survey_id", 3], ["text", "What is your pet?"], ["created_at", "2020-05-16 18:09:53.716056"], ["updated_at", "2020-05-16 18:09:53.716056"], ["answer1", "Dog "], ["answer2", "Cat"], ["answer3", "Bird"], ["answer4", "None"]]
+  ↳ app/controllers/questions_controller.rb:20
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/questions_controller.rb:20
+Redirected to http://localhost:3000/surveys/3
+Completed 302 Found in 64ms (ActiveRecord: 42.0ms)
+
+
+Started GET "/surveys/3" for ::1 at 2020-05-16 23:39:53 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (0.6ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/surveys_controller.rb:35
+  Rendering surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 3], ["LIMIT", 1]]
+  ↳ app/views/surveys/show.html.erb:3
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 3]]
+  ↳ app/views/surveys/show.html.erb:5
+  Rendered surveys/show.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 119ms (Views: 106.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:39:56 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  [1m[36mSurvey Load (1.4ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/admin/surveys/index.html.erb:7
+  Rendered admin/surveys/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 63ms (Views: 60.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/surveys/3" for ::1 at 2020-05-16 23:39:57 +0530
+Processing by Admin::SurveysController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:35
+  Rendering admin/surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/surveys/show.html.erb:3
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 3]]
+  ↳ app/views/admin/surveys/show.html.erb:5
+  Rendered admin/surveys/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 62ms (Views: 55.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/surveys/3/questions/new" for ::1 at 2020-05-16 23:40:00 +0530
+Processing by Admin::QuestionsController#new as HTML
+  Parameters: {"survey_id"=>"3"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/questions_controller.rb:11
+  Rendering admin/questions/new.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.5ms)
+  Rendered layouts/_question_form.html.erb (7.0ms)
+  Rendered admin/questions/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 65ms (Views: 57.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/surveys/3/questions" for ::1 at 2020-05-16 23:40:24 +0530
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gKO6ByYnZQ8Q4aZ/JZcius6mfCYRxO7Zc4BXTmiIyCj6f9X8V/DLGpxCe2Wsa6DN9++4N+VdBlEfagJAAGiGWA==", "question"=>{"text"=>"What is its fur's colour?", "answer1"=>"black", "answer2"=>"white ", "answer3"=>"golden", "answer4"=>"brown"}, "commit"=>"Create Question", "survey_id"=>"3"}
+  [1m[36mSurvey Load (0.8ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:20
+  [1m[36mQuestion Create (2.1ms)[0m  [1m[32mINSERT INTO "questions" ("survey_id", "text", "created_at", "updated_at", "answer1", "answer2", "answer3", "answer4") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["survey_id", 3], ["text", "What is its fur's colour?"], ["created_at", "2020-05-16 18:10:24.231457"], ["updated_at", "2020-05-16 18:10:24.231457"], ["answer1", "black"], ["answer2", "white "], ["answer3", "golden"], ["answer4", "brown"]]
+  ↳ app/controllers/questions_controller.rb:20
+  [1m[35m (49.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/questions_controller.rb:20
+Redirected to http://localhost:3000/surveys/3
+Completed 302 Found in 76ms (ActiveRecord: 52.4ms)
+
+
+Started GET "/surveys/3" for ::1 at 2020-05-16 23:40:24 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/surveys_controller.rb:35
+  Rendering surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 3], ["LIMIT", 1]]
+  ↳ app/views/surveys/show.html.erb:3
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 3]]
+  ↳ app/views/surveys/show.html.erb:5
+  Rendered surveys/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 55ms (Views: 48.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:40:26 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/admin/surveys/index.html.erb:7
+  Rendered admin/surveys/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 50ms (Views: 48.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/surveys/3" for ::1 at 2020-05-16 23:40:27 +0530
+Processing by Admin::SurveysController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (0.7ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:35
+  Rendering admin/surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/surveys/show.html.erb:3
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 3]]
+  ↳ app/views/admin/surveys/show.html.erb:5
+  Rendered admin/surveys/show.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 63ms (Views: 53.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/admin/surveys/3/edit" for ::1 at 2020-05-16 23:40:31 +0530
+Processing by Admin::SurveysController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:29
+  Rendering admin/surveys/edit.html.erb within layouts/application
+  Rendered admin/surveys/edit.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_admin_survey_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "F:/Week-11-Ruby-Rails-Survey/app/views"
+):
+    1: <h1>Edit Feedback</h1>
+    2: 
+    3: <%= render "layouts/admin_survey_form" %>
+  
+app/views/admin/surveys/edit.html.erb:3:in `_app_views_admin_surveys_edit_html_erb__486639593_79421400'
+app/controllers/admin/surveys_controller.rb:30:in `edit'
+Started GET "/admin/surveys/3/edit" for ::1 at 2020-05-16 23:40:34 +0530
+Processing by Admin::SurveysController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (0.8ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:29
+  Rendering admin/surveys/edit.html.erb within layouts/application
+  Rendered admin/surveys/edit.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_admin_survey_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "F:/Week-11-Ruby-Rails-Survey/app/views"
+):
+    1: <h1>Edit Feedback</h1>
+    2: 
+    3: <%= render "layouts/admin_survey_form" %>
+  
+app/views/admin/surveys/edit.html.erb:3:in `_app_views_admin_surveys_edit_html_erb__486639593_133263920'
+app/controllers/admin/surveys_controller.rb:30:in `edit'
+Started GET "/admin/surveys/3/edit" for ::1 at 2020-05-16 23:40:37 +0530
+Processing by Admin::SurveysController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:29
+  Rendering admin/surveys/edit.html.erb within layouts/application
+  Rendered admin/surveys/edit.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_admin_survey_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "F:/Week-11-Ruby-Rails-Survey/app/views"
+):
+    1: <h1>Edit Feedback</h1>
+    2: 
+    3: <%= render "layouts/admin_survey_form" %>
+  
+app/views/admin/surveys/edit.html.erb:3:in `_app_views_admin_surveys_edit_html_erb__486639593_144447560'
+app/controllers/admin/surveys_controller.rb:30:in `edit'
+Started GET "/admin/surveys/3/edit" for ::1 at 2020-05-16 23:41:06 +0530
+Processing by Admin::SurveysController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:29
+  Rendering admin/surveys/edit.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.5ms)
+  Rendered layouts/_survey_form.html.erb (6.6ms)
+  Rendered admin/surveys/edit.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 66ms (Views: 59.7ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/surveys/3" for ::1 at 2020-05-16 23:41:10 +0530
+Processing by SurveysController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fiRgzyTOC4ajSs0+w2Hafv675skgDLcfTtBzjG69f0y17gsAzbtRn/TPfq83EgPEdsdYzkoUWmHn4Q5F7P9USQ==", "survey"=>{"name"=>"Pet Survey"}, "commit"=>"Update Survey", "id"=>"3"}
+  [1m[36mSurvey Load (0.7ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/surveys_controller.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/surveys_controller.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/surveys_controller.rb:43
+Redirected to http://localhost:3000/surveys
+Completed 302 Found in 16ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/surveys" for ::1 at 2020-05-16 23:41:10 +0530
+Processing by SurveysController#index as HTML
+  Rendering surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/surveys/index.html.erb:3
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/surveys/index.html.erb:5
+  Rendered surveys/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/surveys/3" for ::1 at 2020-05-16 23:41:16 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/surveys_controller.rb:35
+  Rendering surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 3], ["LIMIT", 1]]
+  ↳ app/views/surveys/show.html.erb:3
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 3]]
+  ↳ app/views/surveys/show.html.erb:5
+  Rendered surveys/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 58ms (Views: 52.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:41:17 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  [1m[36mSurvey Load (0.6ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/admin/surveys/index.html.erb:7
+  Rendered admin/surveys/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 50ms (Views: 46.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/surveys/3" for ::1 at 2020-05-16 23:41:18 +0530
+Processing by Admin::SurveysController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (0.7ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:35
+  Rendering admin/surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/surveys/show.html.erb:3
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 3]]
+  ↳ app/views/admin/surveys/show.html.erb:5
+  Rendered admin/surveys/show.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 55ms (Views: 48.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/admin/surveys/3/edit" for ::1 at 2020-05-16 23:41:20 +0530
+Processing by Admin::SurveysController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (1.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:29
+  Rendering admin/surveys/edit.html.erb within layouts/application
+  Rendered layouts/_errors.html.erb (0.5ms)
+  Rendered layouts/_survey_form.html.erb (6.5ms)
+  Rendered admin/surveys/edit.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 60ms (Views: 52.1ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/surveys/3" for ::1 at 2020-05-16 23:41:22 +0530
+Processing by SurveysController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3TYi0A+IbgZ/tzbg68dC4FLdIIFXEEHhAavcMfbWQREwINarQgHT1nyhwSHsNXf8TYFZAvau1kMhHTYLVPdHaw==", "survey"=>{"name"=>"Pet Survey"}, "commit"=>"Update Survey", "id"=>"3"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/surveys_controller.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/surveys_controller.rb:43
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/surveys_controller.rb:43
+Redirected to http://localhost:3000/surveys
+Completed 302 Found in 18ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/surveys" for ::1 at 2020-05-16 23:41:22 +0530
+Processing by SurveysController#index as HTML
+  Rendering surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/surveys/index.html.erb:3
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/surveys/index.html.erb:5
+  Rendered surveys/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:41:26 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  [1m[36mSurvey Load (0.9ms)[0m  [1m[34mSELECT "surveys".* FROM "surveys"[0m
+  ↳ app/views/admin/surveys/index.html.erb:7
+  Rendered admin/surveys/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 59ms (Views: 55.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/surveys/3" for ::1 at 2020-05-16 23:41:29 +0530
+Processing by Admin::SurveysController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:35
+  Rendering admin/surveys/show.html.erb within layouts/application
+  [1m[36mQuestion Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "questions" WHERE "questions"."survey_id" = $1 LIMIT $2[0m  [["survey_id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/surveys/show.html.erb:3
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 3]]
+  ↳ app/views/admin/surveys/show.html.erb:5
+  Rendered admin/surveys/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/admin/surveys/3" for ::1 at 2020-05-16 23:41:40 +0530
+Processing by Admin::SurveysController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RT1Z0i6QhSOk3NyIa/TalIyY+2SuFPPHBNHeH70cmZmO9zIdx+XfOvNZbxmfhwMuBORFY8QMHrmt4KPWP16ynA==", "id"=>"3"}
+  [1m[36mSurvey Load (0.5ms)[0m  [1m[34mSELECT  "surveys".* FROM "surveys" WHERE "surveys"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/surveys_controller.rb:53
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = $1[0m  [["survey_id", 3]]
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[36mQuestion Destroy (2.1ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[36mQuestion Destroy (0.7ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[36mSurvey Destroy (0.7ms)[0m  [1m[31mDELETE FROM "surveys" WHERE "surveys"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/admin/surveys_controller.rb:54
+  [1m[35m (35.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/surveys_controller.rb:54
+Redirected to http://localhost:3000/surveys
+Completed 302 Found in 70ms (ActiveRecord: 39.6ms)
+
+
+Started GET "/surveys" for ::1 at 2020-05-16 23:41:40 +0530
+Processing by SurveysController#index as HTML
+  Rendering surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/surveys/index.html.erb:3
+  Rendered surveys/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 121ms (Views: 116.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/surveys" for ::1 at 2020-05-16 23:41:45 +0530
+Processing by SurveysController#index as HTML
+  Rendering surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/surveys/index.html.erb:3
+  Rendered surveys/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 70ms (Views: 68.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:41:50 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  Rendered admin/surveys/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 59ms (Views: 57.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/surveys" for ::1 at 2020-05-16 23:41:52 +0530
+Processing by Admin::SurveysController#index as HTML
+  Rendering admin/surveys/index.html.erb within layouts/application
+  [1m[36mSurvey Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "surveys" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/admin/surveys/index.html.erb:5
+  Rendered admin/surveys/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 48ms (Views: 46.8ms | ActiveRecord: 0.5ms)
+
+
