@@ -1,0 +1,13 @@
+<h1><%= @survey.name %></h1>
+
+<% if @questions.any? %>
+<ol>
+  <% @questions.each do |question| %>
+  <li><%= link_to question.text, survey_question_path(@survey, question) %></li>
+  <% end %>
+</ol>
+<% else %>
+<p>There are no questions yet.</p>
+<% end %>
+
+<p><%= link_to "Return to surveys", surveys_path %></p>

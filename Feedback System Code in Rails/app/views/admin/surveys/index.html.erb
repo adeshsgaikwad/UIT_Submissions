@@ -1,0 +1,15 @@
+<p><%= link_to "User", surveys_path %></p>
+
+<h1>Feedbacks (Admin)</h1>
+
+<% if @surveys.any? %>
+<ul>
+  <% @surveys.each do |survey| %>
+  <li><%= link_to survey.name, admin_survey_path(survey) %></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no Feedbacks yet.</p>
+<% end %>
+
+<p><%= link_to "Create new Feedback Form", new_admin_survey_path %></p>

@@ -1,0 +1,19 @@
+<h1><%= @survey.name %></h1>
+
+<% if @questions.any? %>
+<ol>
+  <% @questions.each do |question| %>
+  <li><%= link_to question.text, admin_survey_question_path(@survey, question) %></li>
+  <% end %>
+</ol>
+<% else %>
+<p>There are no questions yet.</p>
+<% end %>
+
+<p><%= link_to "Add questions", new_admin_survey_question_path(@survey) %></p>
+<p><%= link_to "Edit", edit_admin_survey_path(@survey) %></p>
+<p><%= link_to "Delete", admin_survey_path(@survey),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+<p><%= link_to "Return to Feedbacks", admin_surveys_path %></p>
